@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kushal portfolio</title>
+    <link  rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a94ab81123.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <header class="container">
+        <nav class="navBar">
+            <span class="logo">
+                <a href="#">Kushal</a>
+            </span>
+            <ul id="sidemenu">
+                <li><a href="#header"> Home</a></li>
+                <li><a href="#about">About </a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <img src="images/closeBtn.svg"  class="fas " onclick="closemenu()">
+            </ul>
+            <img src="images/hamMenu.svg" class="fas " onclick="openmenu()">
+        </nav>
+    </header>
+    <div class="container" id="header">
+        <div id="header-text">
+            <p>Software Engineer</p>
+            <h1>Hi, I'm <span> Kushal Neupane</span><br> From Nepal.</h1>
+        </div>
+        <div class="header-image">
+            <img src="images/profileImage.jpeg" alt="">
+        </div>
+    </div>
+    <!-- //-----------about------------ --> 
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/aboutme.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1> <br/>
+                    <p>I am a motivated and creative Software Developer with a strong 
+                        passion for delivering impactful solutions. With expertise in
+                         programming, I bring innovative ideas and practical
+                          execution to every project I undertake. My journey is driven by a 
+                          commitment to learning and continuous growth. I thrive in 
+                          collaborative environments and enjoy tackling challenges with a 
+                          problem-solving mindset. <br>
+                        Let’s connect to create something remarkable together!</p>
+                           <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                           </div>
+                           <div class="tab-content active-tab" id="skills">
+                            <ul>
+                                <li><span>UI/UX</span><br>Designing Web/App Interfaces</li><br/>
+                                <li><span>Web Development</span><br> Web app development</li><br/>
+                                <li><span>Mobile App Development</span><br>Building Andriod/ios apps</li><br/>
+                            </ul>
+                           </div>
+                           <div class="tab-content" id="experience">
+                            <ul>
+                                <li><span>2021-2022</span><br>Banking projects using C</li><br/>
+                                <li><span>2022-2023</span><br>Chitwan Dairy Product project using .Net</li><br/>
+                                <li><span>2023-2024</span><br>SatyaKhabar project using Laravel Framework</li><br/>
+                            </ul>
+                           </div>
+                           <div class="tab-content" id="education">
+                            <ul>
+                                <li><span>2018-2020</span><br>+2 level from Nobel Academy</li><br/>
+                                <li><span>2021</span><br>Started BCA from Oxford College</li><br/>
+                                <li><span>2022</span><br> Web design training</li><br/>
+                            </ul>
+                           </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ------------------services------------------ -->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>UI/UX Design</h2>
+                <p>Delivering user-centered designs by combining research, 
+                    wireframes, and prototypes to create seamless experiences. 
+                    I craft visually appealing and accessible interfaces tailored to
+                     brand identity. My goal is to enhance usability and ensure 
+                     impactful user interactions.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop"></i>
+                <h2>Web App Development</h2>
+                <p>Building responsive and scalable web applications tailored to your needs. 
+                    Delivering seamless user experiences with modern technologies and
+                     clean code.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-app-store"></i>
+                <h2>Mobile App Development</h2>
+                <p>Creating intuitive and high-performance mobile apps designed
+                     for seamless user experiences. Combining modern technologies
+                      with sleek designs to bring your ideas to life.</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------------------portfolio------------------------- -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/technology.jpg" >
+                <div class="layer">
+                    <h3>Chitwan Dairy Products</h3>
+                    <p>Chitwan Dairy Products delivers fresh, high-quality dairy
+                         straight from the heart of Chitwan. Committed to purity and
+                          sustainability, we provide a wide range of milk and milk-based
+                           products crafted with care.
+                         Experience the taste of freshness with every sip and bite! </p><br/>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/technology2.jpg" >
+                <div class="layer">
+                    <h3>Satyakhabar</h3>
+                    <p>Satyakhabar is a dynamic news portal delivering accurate and timely
+                         updates on local, national, and international events. With a focus
+                        on unbiased reporting, it covers a wide range of topics, from
+                        politics and business to sports and entertainment. The platform aims 
+                        to keep its audience informed with credible and in-depth news coverage</p>
+                    
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/technology3.jpg" >
+                <div class="layer">
+                    <h3>Banking Project</h3>
+                    <p> The 1st Year Banking Project aims to provide a foundational understanding
+                        of banking systems and services. It focuses on core banking operations
+                        such as account management, transactions, loan processing, and customer
+                        service. Through practical application and simulation, the project helps
+                        students gain insight into banking processes, financial regulations,
+                         and modern banking
+                         technologies, preparing them for a career in the financial industry.</p>
+                    
+                </div>
+            </div>
+        </div>
+        <a class="btn"> See more</a>
+    </div>
+</div>
+<!---------------------------contact------------------------------ -->
+<!-- CONTACT SECTION -->
+<div id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="contact-left">
+        <h1 class="sub-title">Contact me</h1>
+        <p><i class="fas fa-envelope"></i> neupanekushal365@gmail.com</p>
+        <p><i class="fas fa-phone"></i> 9818159254</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/yodin.bro?mibextid=ZbWKwL" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://instagram.com/kushal___neupane?igshid=MTk0NTkyODZkYg==" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/kushal-neupane-27942b291" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <a href="images/cv.docx" download class="btn btn2">Download CV</a>
+      </div>
+
+      <div class="contact-right">
+        <form id="contact-form">
+          <input type="text" id="txtname" name="name" placeholder="Your Name" required>
+          <span id="forname"></span>
+
+          <input type="email" id="txtemail" name="email" placeholder="Your Email" required>
+          <span id="foremail"></span>
+
+          <textarea name="message" id="txtmessage" rows="6" placeholder="Your Message" required></textarea>
+          <span id="formessage"></span>
+
+          <button type="submit" class="btn btn2">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="copyright">
+      <p>Copyright 2023 &#169; Kushal. All rights preserved</p>
+    </div>
+  </footer>
+</div>
+
+<!-- Javascript validations -->
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-content");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemenu=document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px";
+        }
+    </script>
+    <!-- email.js validation -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
+  (function () {
+    emailjs.init("GKWus_GRT1ckQeals"); // Replace with your own EmailJS public key
+  })();
+
+  // Form submit and validation
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let name = document.getElementById("txtname");
+    let email = document.getElementById("txtemail");
+    let message = document.getElementById("txtmessage");
+
+    let forname = document.getElementById("forname");
+    let foremail = document.getElementById("foremail");
+    let formessage = document.getElementById("formessage");
+
+    let isValid = true;
+
+    // Name validation
+    if (name.value.trim() === "") {
+      forname.innerText = "This field is required";
+      forname.style.color = "red";
+      name.style.borderColor = "red";
+      isValid = false;
+    } else if (name.value.trim().length < 3) {
+      forname.innerText = "Please enter a valid name";
+      forname.style.color = "red";
+      name.style.borderColor = "red";
+      isValid = false;
+    } else {
+      forname.innerText = "";
+      name.style.borderColor = "green";
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email.value.trim() === "") {
+      foremail.innerText = "This field is required";
+      foremail.style.color = "red";
+      email.style.borderColor = "red";
+      isValid = false;
+    } else if (!emailPattern.test(email.value.trim())) {
+      foremail.innerText = "Enter a valid email address";
+      foremail.style.color = "red";
+      email.style.borderColor = "red";
+      isValid = false;
+    } else {
+      foremail.innerText = "";
+      email.style.borderColor = "green";
+    }
+
+    // Message validation
+    if (message.value.trim() === "") {
+      formessage.innerText = "This field is required";
+      formessage.style.color = "red";
+      message.style.borderColor = "red";
+      isValid = false;
+    } else {
+      formessage.innerText = "";
+      message.style.borderColor = "green";
+    }
+
+    if (!isValid) return;
+
+    // Send email using EmailJS
+    emailjs.send("service_j1c52pe", "template_dv666rb", {
+      name: name.value,
+      email: email.value,
+      message: message.value,
+    })
+    .then(() => {
+      alert("Your message has been sent successfully!");
+      document.getElementById("contact-form").reset();
+      name.style.borderColor = "";
+      email.style.borderColor = "";
+      message.style.borderColor = "";
+    })
+    .catch((error) => {
+      alert("Failed to send message. Please try again later.");
+      console.error("EmailJS error:", error);
+    });
+  });
+</script>
+
+    
+  
+</body>
+</html> 
