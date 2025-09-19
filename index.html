@@ -195,6 +195,14 @@
           <textarea name="message" id="txtmessage" rows="6" placeholder="Your Message" required></textarea>
           <span id="formessage"></span>
 
+          <!-- CAPTCHA Section -->
+          <div class="captcha-section">
+            <label for="captcha">Security Check: What is <span id="captcha-question"></span>?</label>
+            <input type="number" id="captcha-answer" name="captcha" placeholder="Enter your answer" required>
+            <button type="button" id="refresh-captcha" class="refresh-btn">🔄 New Question</button>
+            <span id="forcaptcha"></span>
+          </div>
+
           <button type="submit" class="btn btn2">Submit</button>
         </form>
       </div>
@@ -231,6 +239,42 @@
         function closemenu(){
             sidemenu.style.right="-200px";
         }
+
+        // Enhanced mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isMenuOpen = sidemenu.style.right === "0px";
+                const isClickInsideMenu = sidemenu.contains(event.target);
+                const isHamburgerClick = event.target.closest('img[onclick="openmenu()"]');
+                
+                // Close menu if it's open and click is outside menu and not on hamburger
+                if (isMenuOpen && !isClickInsideMenu && !isHamburgerClick) {
+                    closemenu();
+                }
+            });
+
+            // Close menu when clicking on navigation links
+            const menuLinks = sidemenu.querySelectorAll('li a');
+            menuLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    // Add a small delay to allow smooth navigation before closing
+                    setTimeout(function() {
+                        closemenu();
+                    }, 100);
+                });
+            });
+
+            // Close menu with ESC key for better accessibility
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && sidemenu.style.right === "0px") {
+                    closemenu();
+                }
+            });
+
+            // Prevent menu from closing when clicking on the close button
+            // (it already has its own onclick handler)
+        });
     </script>
     <!-- email.js validation -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
@@ -239,6 +283,76 @@
   (function () {
     emailjs.init("GKWus_GRT1ckQeals"); // Replace with your own EmailJS public key
   })();
+
+  // CAPTCHA functionality
+  let captchaAnswer = 0;
+
+  function generateCaptcha() {
+    const num1 = Math.floor(Math.random() * 20) + 1;
+    const num2 = Math.floor(Math.random() * 20) + 1;
+    const operations = ['+', '-', '*'];
+    const operation = operations[Math.floor(Math.random() * operations.length)];
+    
+    let question, answer;
+    
+    switch(operation) {
+      case '+':
+        question = `${num1} + ${num2}`;
+        answer = num1 + num2;
+        break;
+      case '-':
+        // Ensure positive result
+        const larger = Math.max(num1, num2);
+        const smaller = Math.min(num1, num2);
+        question = `${larger} - ${smaller}`;
+        answer = larger - smaller;
+        break;
+      case '*':
+        // Use smaller numbers for multiplication
+        const smallNum1 = Math.floor(Math.random() * 10) + 1;
+        const smallNum2 = Math.floor(Math.random() * 10) + 1;
+        question = `${smallNum1} × ${smallNum2}`;
+        answer = smallNum1 * smallNum2;
+        break;
+    }
+    
+    document.getElementById('captcha-question').textContent = question;
+    captchaAnswer = answer;
+    document.getElementById('captcha-answer').value = '';
+    document.getElementById('forcaptcha').innerText = '';
+    document.getElementById('captcha-answer').style.borderColor = '';
+  }
+
+  function validateCaptcha() {
+    const userAnswer = parseInt(document.getElementById('captcha-answer').value);
+    const captchaError = document.getElementById('forcaptcha');
+    const captchaInput = document.getElementById('captcha-answer');
+    
+    if (isNaN(userAnswer) || userAnswer === '') {
+      captchaError.innerText = 'Please solve the security question';
+      captchaError.style.color = 'red';
+      captchaInput.style.borderColor = 'red';
+      return false;
+    } else if (userAnswer !== captchaAnswer) {
+      captchaError.innerText = 'Incorrect answer. Please try again.';
+      captchaError.style.color = 'red';
+      captchaInput.style.borderColor = 'red';
+      generateCaptcha(); // Generate new question on wrong answer
+      return false;
+    } else {
+      captchaError.innerText = '';
+      captchaInput.style.borderColor = 'green';
+      return true;
+    }
+  }
+
+  // Initialize CAPTCHA when page loads
+  window.addEventListener('load', generateCaptcha);
+
+  // Refresh CAPTCHA button event
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('refresh-captcha').addEventListener('click', generateCaptcha);
+  });
 
   // Form submit and validation
   document.getElementById("contact-form").addEventListener("submit", function (e) {
@@ -298,6 +412,11 @@
       message.style.borderColor = "green";
     }
 
+    // CAPTCHA validation
+    if (!validateCaptcha()) {
+      isValid = false;
+    }
+
     if (!isValid) return;
 
     // Send email using EmailJS
@@ -312,6 +431,8 @@
       name.style.borderColor = "";
       email.style.borderColor = "";
       message.style.borderColor = "";
+      document.getElementById('captcha-answer').style.borderColor = "";
+      generateCaptcha(); // Generate new CAPTCHA after successful submission
     })
     .catch((error) => {
       alert("Failed to send message. Please try again later.");
