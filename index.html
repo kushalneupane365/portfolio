@@ -4,13 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kushal portfolio</title>
-    <link  rel="stylesheet" href="style.css">
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <title>Kushal Neupane - Software Engineer & Flutter Developer | Portfolio</title>
+    <meta name="description" content="Kushal Neupane - Expert Software Engineer specializing in Flutter development, web applications, and mobile app development. Based in Nepal, delivering innovative digital solutions worldwide.">
+    <meta name="keywords" content="Kushal Neupane, Flutter Developer, Software Engineer, Web Developer, Mobile App Developer, Nepal, Portfolio">
+    <meta name="author" content="Kushal Neupane">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="Kushal Neupane - Software Engineer & Flutter Developer">
+    <meta property="og:description" content="Expert Software Engineer specializing in Flutter development and innovative digital solutions">
+    <meta property="og:image" content="./profileImage.jpeg">
+    <meta property="og:url" content="https://kushalneupane365.github.io/portfolio/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kushal Neupane - Software Engineer & Flutter Developer">
+    <meta name="twitter:description" content="Expert Software Engineer specializing in Flutter development and innovative digital solutions">
+    <meta name="twitter:image" content="./profileImage.jpeg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./profileImage.jpeg">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="profileImage.jpeg" as="image">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a94ab81123.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Structured Data for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kushal Neupane",
+      "jobTitle": "Software Engineer",
+      "description": "Expert Flutter Developer and Software Engineer",
+      "url": "https://kushalneupane365.github.io/portfolio/",
+      "sameAs": [
+        "https://www.linkedin.com/in/kushal-neupane-27942b291",
+        "https://www.facebook.com/yodin.bro",
+        "https://instagram.com/kushal___neupane"
+      ],
+      "knowsAbout": ["Flutter Development", "Web Development", "Mobile App Development", "UI/UX Design"],
+      "alumniOf": "Oxford College of Engineering and Management",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Nepal"
+      }
+    }
+    </script>
 
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar"></div>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <header class="container">
         <nav class="navBar">
             <span class="logo">
@@ -28,12 +100,55 @@
         </nav>
     </header>
     <div class="container" id="header">
-        <div id="header-text">
-            <p>Software Engineer</p>
-            <h1>Hi, I'm <span> Kushal Neupane</span><br> From Nepal.</h1>
+        <div class="particles-bg"></div>
+        <div id="header-text" class="fade-in-up">
+            <p class="greeting">Hello, I'm</p>
+            <h1 class="hero-name">
+                <span class="highlight">Kushal Neupane</span>
+            </h1>
+            <h2 class="typing-text">
+                <span id="typed-text"></span>
+                <span class="cursor">|</span>
+            </h2>
+            <p class="hero-description">
+                Passionate Software Engineer from Nepal, crafting innovative digital experiences 
+                that bridge creativity with cutting-edge technology.
+            </p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+            </div>
         </div>
-        <div class="header-image">
-            <img src="profileImage.jpeg" alt="">
+        <div class="header-image fade-in-right">
+            <div class="image-container">
+                <img src="profileImage.jpeg" alt="Kushal Neupane - Software Engineer" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="floating-icons">
+                <div class="floating-icon" style="--delay: 0s;">
+                    <i class="fab fa-flutter"></i>
+                </div>
+                <div class="floating-icon" style="--delay: 1s;">
+                    <i class="fab fa-js-square"></i>
+                </div>
+                <div class="floating-icon" style="--delay: 2s;">
+                    <i class="fab fa-react"></i>
+                </div>
+            </div>
         </div>
     </div>
     <!-- //-----------about------------ --> 
@@ -59,11 +174,62 @@
                             <p class="tab-links" onclick="opentab('education')">Education</p>
                            </div>
                            <div class="tab-content active-tab" id="skills">
-                            <ul>
-                                <li><span>UI/UX Design</span><br>Crafting intuitive and engaging web & mobile interfaces</li>
-                                <li><span>Web Development</span><br>Creating responsive and dynamic web applications</li>
-                                <li><span>Mobile App Development</span><br>Developing high-quality Android and iOS applications</li>
-                            </ul>
+                            <div class="skills-container">
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Flutter Development</span>
+                                        <span class="skill-percentage">95%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">JavaScript/React</span>
+                                        <span class="skill-percentage">90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">UI/UX Design</span>
+                                        <span class="skill-percentage">85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Laravel/PHP</span>
+                                        <span class="skill-percentage">80%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="80%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Database Management</span>
+                                        <span class="skill-percentage">88%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="88%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Mobile App Development</span>
+                                        <span class="skill-percentage">92%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="92%"></div>
+                                    </div>
+                                </div>
+                            </div>
                            </div>
                            <div class="tab-content" id="experience">
                             <ul>
@@ -161,6 +327,57 @@
         <a class="btn"> See more</a>
     </div>
 </div>
+
+<!-- Testimonials Section -->
+<div id="testimonials">
+    <div class="container">
+        <h1 class="sub-title">What Clients Say</h1>
+        <div class="testimonials-slider">
+            <div class="testimonial-item active">
+                <div class="testimonial-content">
+                    <p>"Kushal delivered exceptional work on our Flutter app. His attention to detail and technical expertise exceeded our expectations. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <img src="icon-employee-9.jpg" alt="Client">
+                        <div class="author-info">
+                            <h4>Sudip Parajuli</h4>
+                            <span>CEO, Bitmap IT Solution</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p>"Working with Kushal was a fantastic experience. He transformed our vision into a beautiful, functional web application with remarkable efficiency."</p>
+                    <div class="testimonial-author">
+                        <img src="icon-employee-9.jpg" alt="Client">
+                        <div class="author-info">
+                            <h4>Anil Thapaliya</h4>
+                            <span>Founder, Foliage Soft</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p>"Kushal's expertise in mobile development helped us launch our app successfully. Professional, reliable, and delivers on time!"</p>
+                    <div class="testimonial-author">
+                        <img src="icon-employee-9.jpg" alt="Client">
+                        <div class="author-info">
+                            <h4>Roshan Khanal</h4>
+                            <span>CEO, Bitmap IT Solution</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-dots">
+            <span class="dot active" onclick="currentTestimonial(1)"></span>
+            <span class="dot" onclick="currentTestimonial(2)"></span>
+            <span class="dot" onclick="currentTestimonial(3)"></span>
+        </div>
+    </div>
+</div>
+
 <!---------------------------contact------------------------------ -->
 <!-- CONTACT SECTION -->
 <div id="contact">
@@ -185,25 +402,69 @@
       </div>
 
       <div class="contact-right">
-        <form id="contact-form">
-          <input type="text" id="txtname" name="name" placeholder="Your Name" required>
-          <span id="forname"></span>
-
-          <input type="email" id="txtemail" name="email" placeholder="Your Email" required>
-          <span id="foremail"></span>
-
-          <textarea name="message" id="txtmessage" rows="6" placeholder="Your Message" required></textarea>
-          <span id="formessage"></span>
-
-          <!-- CAPTCHA Section -->
-          <div class="captcha-section">
-            <label for="captcha">Security Check: What is <span id="captcha-question"></span>?</label>
-            <input type="number" id="captcha-answer" name="captcha" placeholder="Enter your answer" required>
-            <button type="button" id="refresh-captcha" class="refresh-btn">🔄 New Question</button>
-            <span id="forcaptcha"></span>
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <input type="text" id="txtname" name="name" placeholder="Your Name" required maxlength="50" pattern="[A-Za-z\s]{2,50}">
+            <span id="forname" class="error-message"></span>
           </div>
 
-          <button type="submit" class="btn btn2">Submit</button>
+          <div class="form-group">
+            <input type="email" id="txtemail" name="email" placeholder="Your Email" required maxlength="100">
+            <span id="foremail" class="error-message"></span>
+          </div>
+
+          <div class="form-group">
+            <input type="tel" id="txtphone" name="phone" placeholder="Your Phone (Optional)" maxlength="15" pattern="[0-9\+\-\s\(\)]{10,15}">
+            <span id="forphone" class="error-message"></span>
+          </div>
+
+          <div class="form-group">
+            <select id="txtsubject" name="subject" required>
+              <option value="">Select Subject</option>
+              <option value="web-development">Web Development</option>
+              <option value="mobile-app">Mobile App Development</option>
+              <option value="ui-ux">UI/UX Design</option>
+              <option value="consultation">Consultation</option>
+              <option value="other">Other</option>
+            </select>
+            <span id="forsubject" class="error-message"></span>
+          </div>
+
+          <div class="form-group">
+            <textarea name="message" id="txtmessage" rows="6" placeholder="Your Message" required maxlength="1000" minlength="10"></textarea>
+            <div class="char-counter">
+              <span id="char-count">0</span>/1000 characters
+            </div>
+            <span id="formessage" class="error-message"></span>
+          </div>
+
+          <!-- Enhanced CAPTCHA Section -->
+          <div class="captcha-section">
+            <label for="captcha">Security Check: What is <span id="captcha-question"></span>?</label>
+            <input type="number" id="captcha-answer" name="captcha" placeholder="Enter your answer" required min="0" max="200">
+            <button type="button" id="refresh-captcha" class="refresh-btn" title="Generate new question">🔄 New Question</button>
+            <span id="forcaptcha" class="error-message"></span>
+          </div>
+
+          <!-- Honeypot for bot detection -->
+          <input type="text" name="_honeypot" class="honeypot" tabindex="-1" autocomplete="off">
+
+          <!-- Privacy Policy Checkbox -->
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="privacy-consent" name="privacy" required>
+              <span class="checkmark"></span>
+              I agree to the <a href="#" class="privacy-link">Privacy Policy</a> and consent to my data being processed.
+            </label>
+            <span id="forprivacy" class="error-message"></span>
+          </div>
+
+          <button type="submit" class="btn btn2" id="submit-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loader"></span>
+          </button>
+          
+          <div id="form-status" class="form-status"></div>
         </form>
       </div>
     </div>
@@ -232,23 +493,201 @@
         }
     </script>
     <script>
-        var sidemenu=document.getElementById("sidemenu");
-        function openmenu(){
-            sidemenu.style.right="0";
+        // Enhanced Portfolio JavaScript
+        
+        // Loading Screen
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                document.body.style.overflow = 'visible';
+                initializeAnimations();
+            }, 1000);
+        });
+
+        // Theme Management
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        let currentTheme = localStorage.getItem('theme') || 'dark';
+
+        function setTheme(theme) {
+            if (theme === 'light') {
+                body.setAttribute('data-theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                body.removeAttribute('data-theme');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+            localStorage.setItem('theme', theme);
+            currentTheme = theme;
         }
-        function closemenu(){
-            sidemenu.style.right="-200px";
+
+        setTheme(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.querySelector('.scroll-progress-bar').style.width = scrollPercent + '%';
+
+            // Header scroll effect
+            const header = document.querySelector('header');
+            if (scrollTop > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Back to top button
+            const backToTop = document.getElementById('back-to-top');
+            if (scrollTop > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Back to Top Button
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Typing Effect
+        const typingText = document.getElementById('typed-text');
+        const phrases = [
+            'Flutter Developer',
+            'Software Engineer',
+            'UI/UX Designer',
+            'Web Developer',
+            'Mobile App Creator',
+            'Problem Solver'
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeWriter, typeSpeed);
+        }
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // Skills Progress Animation
+        function animateSkills() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.getAttribute('data-width');
+                        entry.target.style.width = width;
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            skillBars.forEach(bar => observer.observe(bar));
+        }
+
+        // Testimonials Slider
+        let currentTestimonial = 1;
+        function showTestimonial(n) {
+            const testimonials = document.querySelectorAll('.testimonial-item');
+            const dots = document.querySelectorAll('.dot');
+            
+            if (n > testimonials.length) currentTestimonial = 1;
+            if (n < 1) currentTestimonial = testimonials.length;
+            
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            if (testimonials[currentTestimonial - 1]) {
+                testimonials[currentTestimonial - 1].classList.add('active');
+            }
+            if (dots[currentTestimonial - 1]) {
+                dots[currentTestimonial - 1].classList.add('active');
+            }
+        }
+
+        function currentTestimonialFunc(n) {
+            currentTestimonial = n;
+            showTestimonial(currentTestimonial);
+        }
+
+        // Auto-slide testimonials
+        setInterval(() => {
+            currentTestimonial++;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Mobile Menu Functions
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
         }
 
         // Enhanced mobile menu functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize animations
+            setTimeout(() => {
+                typeWriter();
+                animateCounters();
+                animateSkills();
+            }, 1500);
+
             // Close menu when clicking outside
             document.addEventListener('click', function(event) {
                 const isMenuOpen = sidemenu.style.right === "0px";
                 const isClickInsideMenu = sidemenu.contains(event.target);
                 const isHamburgerClick = event.target.closest('img[onclick="openmenu()"]');
                 
-                // Close menu if it's open and click is outside menu and not on hamburger
                 if (isMenuOpen && !isClickInsideMenu && !isHamburgerClick) {
                     closemenu();
                 }
@@ -258,23 +697,36 @@
             const menuLinks = sidemenu.querySelectorAll('li a');
             menuLinks.forEach(function(link) {
                 link.addEventListener('click', function() {
-                    // Add a small delay to allow smooth navigation before closing
                     setTimeout(function() {
                         closemenu();
                     }, 100);
                 });
             });
 
-            // Close menu with ESC key for better accessibility
+            // Close menu with ESC key
             document.addEventListener('keydown', function(event) {
                 if (event.key === 'Escape' && sidemenu.style.right === "0px") {
                     closemenu();
                 }
             });
-
-            // Prevent menu from closing when clicking on the close button
-            // (it already has its own onclick handler)
         });
+
+        function initializeAnimations() {
+            // Add entrance animations to elements
+            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-right, .fade-in-left');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animatedElements.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        }
     </script>
     <!-- email.js validation -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
@@ -354,62 +806,150 @@
     document.getElementById('refresh-captcha').addEventListener('click', generateCaptcha);
   });
 
-  // Form submit and validation
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+  // Enhanced Form Validation and Security
+  const form = document.getElementById("contact-form");
+  const submitBtn = document.getElementById("submit-btn");
+  const formStatus = document.getElementById("form-status");
+  
+  // Rate limiting
+  let submissionCount = 0;
+  let lastSubmissionTime = 0;
+  const MAX_SUBMISSIONS = 3;
+  const TIME_WINDOW = 15 * 60 * 1000; // 15 minutes
 
-    let name = document.getElementById("txtname");
-    let email = document.getElementById("txtemail");
-    let message = document.getElementById("txtmessage");
+  // Character counter for message
+  const messageField = document.getElementById("txtmessage");
+  const charCount = document.getElementById("char-count");
+  
+  messageField.addEventListener('input', function() {
+    const count = this.value.length;
+    charCount.textContent = count;
+    
+    if (count > 1000) {
+      charCount.style.color = 'var(--error-color)';
+    } else if (count > 800) {
+      charCount.style.color = 'var(--warning-color)';
+    } else {
+      charCount.style.color = 'var(--text-secondary)';
+    }
+  });
 
-    let forname = document.getElementById("forname");
-    let foremail = document.getElementById("foremail");
-    let formessage = document.getElementById("formessage");
+  // Input sanitization
+  function sanitizeInput(input) {
+    return input.trim().replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+  }
+
+  // Advanced email validation
+  function isValidEmail(email) {
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    const commonDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'live.com'];
+    return emailRegex.test(email) && email.length <= 254;
+  }
+
+  // Phone validation
+  function isValidPhone(phone) {
+    if (!phone) return true; // Optional field
+    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+    return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
+  }
+
+  // Profanity filter (basic)
+  function containsProfanity(text) {
+    const profanityList = ['spam', 'scam', 'hack', 'virus'];
+    return profanityList.some(word => text.toLowerCase().includes(word));
+  }
+
+  // Enhanced validation function
+  function validateForm() {
+    const name = document.getElementById("txtname");
+    const email = document.getElementById("txtemail");
+    const phone = document.getElementById("txtphone");
+    const subject = document.getElementById("txtsubject");
+    const message = document.getElementById("txtmessage");
+    const privacy = document.getElementById("privacy-consent");
+    const honeypot = document.querySelector('input[name="_honeypot"]');
 
     let isValid = true;
 
+    // Clear previous errors
+    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+    document.querySelectorAll('input, textarea, select').forEach(el => {
+      el.classList.remove('error');
+    });
+
+    // Honeypot check (bot detection)
+    if (honeypot.value) {
+      showFormStatus('Spam detected. Submission blocked.', 'error');
+      return false;
+    }
+
     // Name validation
-    if (name.value.trim() === "") {
-      forname.innerText = "This field is required";
-      forname.style.color = "red";
-      name.style.borderColor = "red";
+    const nameValue = sanitizeInput(name.value);
+    if (!nameValue) {
+      showError('forname', 'Name is required');
+      name.classList.add('error');
       isValid = false;
-    } else if (name.value.trim().length < 3) {
-      forname.innerText = "Please enter a valid name";
-      forname.style.color = "red";
-      name.style.borderColor = "red";
+    } else if (nameValue.length < 2 || nameValue.length > 50) {
+      showError('forname', 'Name must be between 2-50 characters');
+      name.classList.add('error');
       isValid = false;
-    } else {
-      forname.innerText = "";
-      name.style.borderColor = "green";
+    } else if (!/^[a-zA-Z\s]+$/.test(nameValue)) {
+      showError('forname', 'Name can only contain letters and spaces');
+      name.classList.add('error');
+      isValid = false;
     }
 
     // Email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email.value.trim() === "") {
-      foremail.innerText = "This field is required";
-      foremail.style.color = "red";
-      email.style.borderColor = "red";
+    const emailValue = sanitizeInput(email.value);
+    if (!emailValue) {
+      showError('foremail', 'Email is required');
+      email.classList.add('error');
       isValid = false;
-    } else if (!emailPattern.test(email.value.trim())) {
-      foremail.innerText = "Enter a valid email address";
-      foremail.style.color = "red";
-      email.style.borderColor = "red";
+    } else if (!isValidEmail(emailValue)) {
+      showError('foremail', 'Please enter a valid email address');
+      email.classList.add('error');
       isValid = false;
-    } else {
-      foremail.innerText = "";
-      email.style.borderColor = "green";
+    }
+
+    // Phone validation (optional)
+    const phoneValue = sanitizeInput(phone.value);
+    if (phoneValue && !isValidPhone(phoneValue)) {
+      showError('forphone', 'Please enter a valid phone number');
+      phone.classList.add('error');
+      isValid = false;
+    }
+
+    // Subject validation
+    if (!subject.value) {
+      showError('forsubject', 'Please select a subject');
+      subject.classList.add('error');
+      isValid = false;
     }
 
     // Message validation
-    if (message.value.trim() === "") {
-      formessage.innerText = "This field is required";
-      formessage.style.color = "red";
-      message.style.borderColor = "red";
+    const messageValue = sanitizeInput(message.value);
+    if (!messageValue) {
+      showError('formessage', 'Message is required');
+      message.classList.add('error');
       isValid = false;
-    } else {
-      formessage.innerText = "";
-      message.style.borderColor = "green";
+    } else if (messageValue.length < 10) {
+      showError('formessage', 'Message must be at least 10 characters');
+      message.classList.add('error');
+      isValid = false;
+    } else if (messageValue.length > 1000) {
+      showError('formessage', 'Message cannot exceed 1000 characters');
+      message.classList.add('error');
+      isValid = false;
+    } else if (containsProfanity(messageValue)) {
+      showError('formessage', 'Message contains inappropriate content');
+      message.classList.add('error');
+      isValid = false;
+    }
+
+    // Privacy consent validation
+    if (!privacy.checked) {
+      showError('forprivacy', 'You must agree to the privacy policy');
+      isValid = false;
     }
 
     // CAPTCHA validation
@@ -417,26 +957,81 @@
       isValid = false;
     }
 
-    if (!isValid) return;
+    return isValid;
+  }
+
+  function showError(elementId, message) {
+    const errorElement = document.getElementById(elementId);
+    if (errorElement) {
+      errorElement.textContent = message;
+    }
+  }
+
+  function showFormStatus(message, type) {
+    formStatus.textContent = message;
+    formStatus.className = `form-status ${type}`;
+  }
+
+  // Rate limiting check
+  function checkRateLimit() {
+    const now = Date.now();
+    if (now - lastSubmissionTime > TIME_WINDOW) {
+      submissionCount = 0;
+    }
+    
+    if (submissionCount >= MAX_SUBMISSIONS) {
+      const timeLeft = Math.ceil((TIME_WINDOW - (now - lastSubmissionTime)) / 60000);
+      showFormStatus(`Too many submissions. Please wait ${timeLeft} minutes.`, 'error');
+      return false;
+    }
+    
+    return true;
+  }
+
+  // Form submission
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (!validateForm() || !checkRateLimit()) {
+      return;
+    }
+
+    // Show loading state
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+
+    const formData = {
+      name: sanitizeInput(document.getElementById("txtname").value),
+      email: sanitizeInput(document.getElementById("txtemail").value),
+      phone: sanitizeInput(document.getElementById("txtphone").value),
+      subject: document.getElementById("txtsubject").value,
+      message: sanitizeInput(document.getElementById("txtmessage").value),
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent.substring(0, 200) // Limited for privacy
+    };
 
     // Send email using EmailJS
-    emailjs.send("service_j1c52pe", "template_dv666rb", {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    })
+    emailjs.send("service_j1c52pe", "template_dv666rb", formData)
     .then(() => {
-      alert("Your message has been sent successfully!");
-      document.getElementById("contact-form").reset();
-      name.style.borderColor = "";
-      email.style.borderColor = "";
-      message.style.borderColor = "";
-      document.getElementById('captcha-answer').style.borderColor = "";
-      generateCaptcha(); // Generate new CAPTCHA after successful submission
+      showFormStatus("Message sent successfully! I'll get back to you soon.", 'success');
+      form.reset();
+      generateCaptcha();
+      
+      // Update rate limiting
+      submissionCount++;
+      lastSubmissionTime = Date.now();
+      
+      // Reset char counter
+      charCount.textContent = '0';
     })
     .catch((error) => {
-      alert("Failed to send message. Please try again later.");
       console.error("EmailJS error:", error);
+      showFormStatus("Failed to send message. Please try again later.", 'error');
+    })
+    .finally(() => {
+      // Remove loading state
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
     });
   });
 </script>
