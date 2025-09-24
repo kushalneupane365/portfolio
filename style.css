@@ -33,8 +33,11 @@
 /* Light Theme Specific Overrides */
 [data-theme="light"] header {
     background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
+    top: 0;
+    left: 0;
 }
 
 [data-theme="light"] header.scrolled {
@@ -150,6 +153,12 @@
     background: #ffffff;
     border: 1px solid #ced4da;
     color: var(--text-color);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
 }
 
 [data-theme="light"] .captcha-section input[type="number"]::placeholder {
@@ -612,12 +621,18 @@ header{
     width: 100%;
     height: 100px;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1000;
     background: rgba(8, 8, 8, 0.95);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     border-bottom: 1px solid var(--border-color);
     transition: var(--transition);
+    box-sizing: border-box;
 }
 
 header.scrolled {
@@ -627,10 +642,19 @@ header.scrolled {
 
 nav{
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
-    flex-wrap: wrap;   
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 nav ul li{
@@ -672,16 +696,27 @@ nav ul li a:hover {
 /* Enhanced Hero Section */
 #header {
     min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+    padding-top: 100px;
+    box-sizing: border-box;
 }
 
 #header-text {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     z-index: 2;
     animation-delay: 0.2s;
+    max-width: 50%;
+    padding-right: 20px;
+    box-sizing: border-box;
 }
 
 .greeting {
@@ -704,6 +739,9 @@ nav ul li a:hover {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
+    display: inline-block;
+    /* Fallback for browsers that don't support background-clip */
+    color: var(--primary-color);
 }
 
 .typing-text {
@@ -735,9 +773,15 @@ nav ul li a:hover {
 
 .hero-buttons {
     margin: 40px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 20px;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .btn-primary, .btn-secondary {
@@ -768,10 +812,16 @@ nav ul li a:hover {
 }
 
 .hero-stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 40px;
     margin-top: 50px;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .stat {
@@ -796,12 +846,23 @@ nav ul li a:hover {
 
 /* Enhanced Header Image */
 .header-image {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     position: relative;
     animation-delay: 0.4s;
+    max-width: 50%;
+    padding-left: 20px;
+    box-sizing: border-box;
 }
 
 .image-container {
@@ -1620,20 +1681,34 @@ nav .fas{
     
     /* Enhanced Mobile Hero Section */
     #header {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         text-align: center;
         padding-top: 100px;
         min-height: 90vh;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
     }
     
     #header-text {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
         order: 2;
         margin-top: 30px;
+        max-width: 100%;
+        padding-right: 0;
     }
     
     .header-image {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
         order: 1;
         margin-bottom: 20px;
+        max-width: 100%;
+        padding-left: 0;
     }
     
     .image-container {
@@ -1790,6 +1865,17 @@ nav .fas{
         width: 60%;
         margin-bottom: 10px;
         font-size: 16px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+        appearance: none;
+        border: 1px solid var(--primary);
+        border-radius: 5px;
+        padding: 10px;
+        background: var(--background);
+        color: var(--text);
     }
     
     .refresh-btn {
@@ -1797,6 +1883,17 @@ nav .fas{
         margin-left: 5px;
         padding: 12px 8px;
         font-size: 12px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
     }
     
     #submit-btn {
@@ -1882,11 +1979,20 @@ nav .fas{
     .captcha-section input[type="number"] {
         width: 100%;
         margin-bottom: 15px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+        appearance: none;
     }
     
     .refresh-btn {
         width: 100%;
         margin-left: 0;
         margin-top: 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
     }
 }
